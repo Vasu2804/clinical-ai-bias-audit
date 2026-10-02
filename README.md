@@ -25,7 +25,7 @@ The audit successfully identified and quantified three injected bias vectors:
 
 - `/data`: Contains the `triage_dataset_raw.csv` (synthetic data generated for this audit).
 - `/sql`: The `Audit_SM_SQL.sql` script containing the exact queries used to detect the biases.
-- `/docs`: Contains the formal [Remediation Report Memo](docs/Remediation_Report.md) addressed to leadership, and the [Enterprise Audit Methodology](docs/Enterprise_Audit_Methodology.md).
+- `/docs`: Contains the formal [Remediation Report Memo](docs/Remediation_Report.md) addressed to leadership.
 - `/visuals`: Power BI dashboard exports visualizing the bias deltas.
 
 ## Methodology
