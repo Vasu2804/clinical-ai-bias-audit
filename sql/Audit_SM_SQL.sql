@@ -45,7 +45,7 @@ SELECT
     -- 3. Ground Truth Parity (Proving the penalty is unwarranted)
     ROUND(100.0 * SUM(actual_30_day_readmission) / COUNT(*), 2) AS actual_readmission_rate
 FROM triage_dataset_raw tdr
-GROUP BY SUBSTR(patient_zip, 1, 3)
+GROUP BY SUBSTR(patient_zip, 1, 3);
 
 
 
