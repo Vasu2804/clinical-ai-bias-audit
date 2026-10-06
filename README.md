@@ -21,6 +21,8 @@ The audit successfully identified and quantified three injected bias vectors:
    - **Finding:** Lower-income zip codes (104xx) had a 60.68% missing medical history rate vs. 10.09% for affluent codes (100xx). The algorithm penalized missing history with a +20 point risk score, artificially inflating lower-income risk scores to 68.12 (vs 58.31) despite identical ground-truth readmission rates (~14%).
    - **Impact:** Socioeconomic redlining embedded silently into a readmission predictor via proxy variables.
 
+![Triage Bias Dashboard](visuals/Dashboard_zip_audit.png)
+
 ## Repository Contents
 
 - `/data`: Contains the `triage_dataset_raw.csv` (synthetic data generated for this audit).
