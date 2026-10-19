@@ -37,7 +37,6 @@ The audit successfully identified and quantified three injected bias vectors:
 - `/visuals`: Power BI dashboard exports visualizing the bias deltas.
 
 ## Methodology
-### Audit Architecture & Data Flow
 
 ### Operational Audit Pipeline
 | Step | Stage | File Asset | Audit Purpose & Scope |
