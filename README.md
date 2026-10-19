@@ -38,22 +38,14 @@ The audit successfully identified and quantified three injected bias vectors:
 
 ## Methodology
 ### Audit Architecture & Data Flow
-```mermaid
-flowchart TD
-    A["1. Data Ingestion & Synthesis (5,000 Records / CSV)"]
-    B["2. MySQL Bias Detection Engine (Audit_SM_SQL.sql)"]
-    C["3. Power BI Discrepancy Modeling (Dashboard_zip_audit.png)"]
-    D["4. Executive Governance Remediation (Remediation_Report.md)"]
-
-    A --> B
-    B --> C
-    C --> D
-
-    style A fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#0f172a
-    style B fill:#eff6ff,stroke:#2563eb,stroke-width:1.5px,color:#1e3a8a
-    style C fill:#fefce8,stroke:#ca8a04,stroke-width:1.5px,color:#713f12
-    style D fill:#f0fdf4,stroke:#16a34a,stroke-width:1.5px,color:#14532d
-
+```markdown
+### Operational Audit Pipeline
+| Step | Stage | File Asset | Audit Purpose & Scope |
+| :---: | :--- | :--- | :--- |
+| **01** | **Data Synthesis** | [`triage_dataset_raw.csv`](data/triage_dataset_raw.csv) | 5,000 controlled patient encounter records simulating EHR triage data |
+| **02** | **SQL Auditing** | [`Audit_SM_SQL.sql`](sql/Audit_SM_SQL.sql) | Automated queries identifying demographic missingness and proxy bias |
+| **03** | **BI Modeling** | [`visuals/`](visuals/) | Power BI models quantifying risk score inflation deltas across zip codes |
+| **04** | **Remediation** | [`Remediation_Report.md`](docs/Remediation_Report.md) | Formal executive memo specifying Article 10 corrective actions for leadership |
 ```
 This audit followed the **Obermeyer Protocol** framework:
 1. **Feature Correlation:** Identifying variables linked to protected classes (e.g., zip code to socioeconomic status).
