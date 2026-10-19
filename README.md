@@ -24,7 +24,9 @@ The audit successfully identified and quantified three injected bias vectors:
 3. **Geographical/Socioeconomic Proxy Discrimination (Article 10(4) & 10(2)(f)):**
    - **Finding:** Lower-income zip codes (104xx) had a 60.68% missing medical history rate vs. 10.09% for affluent codes (100xx). The algorithm penalized missing history with a +20 point risk score, artificially inflating lower-income risk scores to 68.12 (vs 58.31) despite identical ground-truth readmission rates (~14%).
    - **Impact:** Socioeconomic redlining embedded silently into a readmission predictor via proxy variables.
-
+<p align="center">
+  <em>Figure 1: Empirical delta between lower-income (104xx) and affluent (100xx) cohorts demonstrating the +20 pt risk score inflation driven by medical history missingness rather than clinical readmission risk.</em>
+</p>
 ![Triage Bias Dashboard](visuals/Dashboard_zip_audit.png)
 
 ## Repository Contents
@@ -35,7 +37,18 @@ The audit successfully identified and quantified three injected bias vectors:
 - `/visuals`: Power BI dashboard exports visualizing the bias deltas.
 
 ## Methodology
-
+### Audit Architecture & Data Flow
+```mermaid
+flowchart LR
+    A[Synthetic Triage Data<br/>5,000 Records / CSV] --> B[MySQL Audit Suite<br/>Audit_SM_SQL.sql]
+    B --> C[Power BI Modeling<br/>Delta & Risk Inflation]
+    C --> D[Article 10 Remediation<br/>Remediation_Report.md]
+    
+    style A fill:#f1f5f9,stroke:#64748b,stroke-width:1px,color:#0f172a
+    style B fill:#eff6ff,stroke:#2563eb,stroke-width:1px,color:#1e3a8a
+    style C fill:#fefce8,stroke:#ca8a04,stroke-width:1px,color:#713f12
+    style D fill:#f0fdf4,stroke:#16a34a,stroke-width:1px,color:#14532d
+```
 This audit followed the **Obermeyer Protocol** framework:
 1. **Feature Correlation:** Identifying variables linked to protected classes (e.g., zip code to socioeconomic status).
 2. **Model Penalty:** Auditing how the algorithm treats those variables (e.g., penalizing missing history).
