@@ -1,3 +1,7 @@
+![Compliance](https://img.shields.io/badge/Compliance-EU_AI_Act_Art._10-003399?style=flat-square)
+![Language](https://img.shields.io/badge/Language-MySQL-orange?style=flat-square)
+![Visualization](https://img.shields.io/badge/Dashboard-Power_BI-F2C811?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 # EU AI Act (Article 10) Data Bias Audit: Clinical Triage System
 
 ## Executive Summary
