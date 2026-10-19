@@ -38,7 +38,7 @@ The audit successfully identified and quantified three injected bias vectors:
 
 ## Methodology
 ### Audit Architecture & Data Flow
-```markdown
+
 ### Operational Audit Pipeline
 | Step | Stage | File Asset | Audit Purpose & Scope |
 | :---: | :--- | :--- | :--- |
@@ -46,7 +46,7 @@ The audit successfully identified and quantified three injected bias vectors:
 | **02** | **SQL Auditing** | [`Audit_SM_SQL.sql`](sql/Audit_SM_SQL.sql) | Automated queries identifying demographic missingness and proxy bias |
 | **03** | **BI Modeling** | [`visuals/`](visuals/) | Power BI models quantifying risk score inflation deltas across zip codes |
 | **04** | **Remediation** | [`Remediation_Report.md`](docs/Remediation_Report.md) | Formal executive memo specifying Article 10 corrective actions for leadership |
-```
+
 This audit followed the **Obermeyer Protocol** framework:
 1. **Feature Correlation:** Identifying variables linked to protected classes (e.g., zip code to socioeconomic status).
 2. **Model Penalty:** Auditing how the algorithm treats those variables (e.g., penalizing missing history).
