@@ -27,6 +27,7 @@ The audit successfully identified and quantified three injected bias vectors:
 <p align="center">
   <em>Figure 1: Empirical delta between lower-income (104xx) and affluent (100xx) cohorts demonstrating the +20 pt risk score inflation driven by medical history missingness rather than clinical readmission risk.</em>
 </p>
+
 ![Triage Bias Dashboard](visuals/Dashboard_zip_audit.png)
 
 ## Repository Contents
