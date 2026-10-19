@@ -39,15 +39,21 @@ The audit successfully identified and quantified three injected bias vectors:
 ## Methodology
 ### Audit Architecture & Data Flow
 ```mermaid
-flowchart LR
-    A[Synthetic Triage Data<br/>5,000 Records / CSV] --> B[MySQL Audit Suite<br/>Audit_SM_SQL.sql]
-    B --> C[Power BI Modeling<br/>Delta & Risk Inflation]
-    C --> D[Article 10 Remediation<br/>Remediation_Report.md]
-    
-    style A fill:#f1f5f9,stroke:#64748b,stroke-width:1px,color:#0f172a
-    style B fill:#eff6ff,stroke:#2563eb,stroke-width:1px,color:#1e3a8a
-    style C fill:#fefce8,stroke:#ca8a04,stroke-width:1px,color:#713f12
-    style D fill:#f0fdf4,stroke:#16a34a,stroke-width:1px,color:#14532d
+flowchart TD
+    A["1. Data Ingestion & Synthesis (5,000 Records / CSV)"]
+    B["2. MySQL Bias Detection Engine (Audit_SM_SQL.sql)"]
+    C["3. Power BI Discrepancy Modeling (Dashboard_zip_audit.png)"]
+    D["4. Executive Governance Remediation (Remediation_Report.md)"]
+
+    A --> B
+    B --> C
+    C --> D
+
+    style A fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#0f172a
+    style B fill:#eff6ff,stroke:#2563eb,stroke-width:1.5px,color:#1e3a8a
+    style C fill:#fefce8,stroke:#ca8a04,stroke-width:1.5px,color:#713f12
+    style D fill:#f0fdf4,stroke:#16a34a,stroke-width:1.5px,color:#14532d
+
 ```
 This audit followed the **Obermeyer Protocol** framework:
 1. **Feature Correlation:** Identifying variables linked to protected classes (e.g., zip code to socioeconomic status).
